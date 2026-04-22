@@ -1,0 +1,6 @@
+paso,eliminadas,pct,restantes,nota
+parent_asin nulo,0,0.0,1610012,sin llave de join
+title nulo / vacío,94,0.006,1609918,""
+"average_rating fuera de [1,5]",0,0.0,1609918,""
+"price fuera de [$0.01,$50000]",10,0.001,1609908,precios negativos o absurdos
+duplicados por parent_asin,0,0.0,1609908,se mantiene el más popular

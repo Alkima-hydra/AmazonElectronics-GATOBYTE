@@ -1,0 +1,10 @@
+paso,eliminadas,pct,restantes,nota
+verified_purchase == False,3340060,7.611,40546884,compra no verificada
+text null / vacío,39045,0.089,40507839,""
+text < 30 chars,6671791,15.202,33836048,sin valor NLP
+text > 2500 chars,142457,0.325,33693591,copypaste/scraping
+"rating fuera de [1,5]",1,0.0,33693590,""
+"helpful_vote fuera de [0, 10000]",5,0.0,33693585,sin votos útiles
+parent_asin is null,0,0.0,33693585,sin producto padre
+spam (caps/repetición/símbolos),276404,0.63,33417181,""
+near-duplicates (fingerprint 200c),997821,2.274,32419360,copias entre usuarios
