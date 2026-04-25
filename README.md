@@ -9,8 +9,8 @@ Este proyecto aplica técnicas de **Machine Learning** sobre un subconjunto de *
 | Módulo | Tarea | Variable Objetivo |
 |---|---|---|
 | Análisis de Sentimiento | Clasificación multiclase | Positivo / Neutro / Negativo |
+| Regresión y Helpfulness | Regresión + Clasificación | Rating continuo · Votos útiles |
 | Clustering | Segmentación no supervisada | Grupos de productos y reseñas |
-| *(Referencia)* | Regresión + Helpfulness | Rating continuo · Votos útiles |
 
 La metodología adoptada es **CRISP-DM**, con procesamiento acelerado por GPU usando cuML/RAPIDS.
 
@@ -42,7 +42,7 @@ AMAZONELECTRONICS-GATOBYTE/
 
 ## Dataset
 
-El dataset utilizado es el **Amazon Electronics Reviews**, un subconjunto de 1 millón de registros con las siguientes características:
+El dataset utilizado es el **Amazon Electronics Reviews**, del cual se saco un subconjunto de 1 millón de registros con las siguientes características:
 
 | Atributo | Detalle |
 |---|---|
@@ -155,9 +155,7 @@ Se generaron 6 variables derivadas sobre el dataset original:
 
 ---
 
-### Módulo II — Clustering de Productos
-
-markdown### Módulo II — Regresión de Rating y Clasificación de Helpfulness
+### Módulo II — Regresión de Rating y Clasificación de Helpfulness
 
 Este módulo aborda dos subproblemas sobre el dataset de reseñas:
 
@@ -183,7 +181,7 @@ Se trabajó con un **30% estratificado** del dataset para eficiencia computacion
 | Modelo | AUC Val | Recall | Precisión | F1 | GAP |
 |---|---|---|---|---|---|
 | Logistic Reg. Baseline | 0.7443 | Bajo | Alta | — | -0.0028 |
-| Logistic Reg. L2 + Balanced | 0.7456 | 0.61 ↑ | 0.43 | — | ~0 |
+| Logistic Reg. L2 + Balanced | 0.7456 | 0.61 | 0.43 | — | ~0 |
 | Árbol de Decisión | 0.7379 | — | — | — | 0.0010 |
 | **LightGBM ★** | **Mejor** | **Mejor** | **Mejor** | **Mejor** | **~0** |
 
@@ -196,6 +194,7 @@ El pipeline de producción combina ambos modelos:
 - **CatBoost** → predice el `rating` (escala 1.0 – 5.0)
 - **LightGBM** → predice si la reseña será `útil` (0 / 1) con probabilidad asociada
 
+---
 
 
 ### Módulo III — Clustering de Productos
